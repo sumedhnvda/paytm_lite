@@ -6,9 +6,9 @@ const authMiddleware = require("../middleware.js");
 // Get balance
 router.get("/balance", authMiddleware, async (req, res) => {
     try {
-        const account = await Account.findOne({ userId: req.userId });
+        const account = await Account.findOne({ userID: req.userId });
 
-        if (!account) {
+        if (!account.balance) {
             return res.status(404).json({ message: "Account not found" });
         }
 

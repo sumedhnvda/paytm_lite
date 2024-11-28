@@ -102,7 +102,7 @@ router.put("/update", authMiddleware, async (req, res) => {
     })
 })
 
-router.get("/bulk", async (req, res) => {
+router.get("/bulk",async (req, res) => {
     const filter = req.query.filter || "";
 
     const users = await userDB.find({
@@ -128,3 +128,23 @@ router.get("/bulk", async (req, res) => {
 })
 
 module.exports=router
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
