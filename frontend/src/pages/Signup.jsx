@@ -5,8 +5,9 @@ import { Button } from "../components/Button"
 import { Heading } from "../components/Heading"
 import { InputBox } from "../components/InputBox"
 import { SubHeading } from "../components/SubHeading"
-
+import { useNavigate } from "react-router-dom";
 export const Signup = () => {
+  const navigate=useNavigate();
 const [firstName ,setfirstname]=useState("")
 const [lastName ,setlastname]=useState("")
 const [username ,setemail]=useState("")
@@ -38,6 +39,7 @@ const [password ,setpassword]=useState("")
               password
             });
             localStorage.setItem("token",response.data.token)
+            navigate("/Dashboard")
           }} label={"Sign up"} />
         </div>
         <BottomWarning label={"Already have an account?"} buttonText={"Sign in"} to={"/signin"} />

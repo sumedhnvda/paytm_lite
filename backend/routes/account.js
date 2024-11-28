@@ -19,7 +19,7 @@ router.get("/balance", authMiddleware, async (req, res) => {
     }
 });
 
-// Transfer funds
+
 router.post("/transfer", authMiddleware, async (req, res) => {
     const { amount, to } = req.body;
 
